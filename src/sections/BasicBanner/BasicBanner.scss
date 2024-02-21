@@ -1,0 +1,62 @@
+@use '../../styles.scss' as agid-style;
+
+.basic-banner-background {
+  background-repeat: no-repeat;
+}
+
+.basic-banner {
+  .overlay-image {
+    background-repeat: no-repeat;
+  }
+
+  .grid-container {
+    width: -webkit-fill-available;
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+
+    .grid-col {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      padding: 0;
+
+      .banner-content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 4em 3em;
+
+        h1 {
+          font-size: 2.5em;
+          margin: 0 0 0.5em;
+        }
+
+        .primary-color {
+          color: agid-style.$theme-color-primary;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 64em) {
+    .overlay-image {
+      background-size: 0px;
+    }
+
+    .grid-container {
+      .grid-col {
+        .banner-content {
+          width: -webkit-fill-available;
+          width: stretch;
+          padding: 1em 0;
+
+          h1 {
+            font-size: 2em;
+            margin: 0 0 0.5em;
+          }
+        }
+      }
+    }
+  }
+}
